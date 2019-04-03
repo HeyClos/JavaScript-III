@@ -41,9 +41,6 @@ CharacterStats.prototype.takeDamage = function(){
   return '<object name> took damage.';
 }
 
-
-
-
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
   * team
