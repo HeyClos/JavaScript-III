@@ -2,15 +2,16 @@
 * in your own words. explain the four principle for the "this" keyword below.
 *
 * 1. 
-
+Window, not global, but looks at everything in a window.
 
 * 2. 
-
+Implicit, this is implied to be inside of the current functional scope
 
 * 3. 
+New,
 
 * 4. 
-explicit: call, apply, bind
+Explicit, you can use call, apply and/or bind to explicitly state where this will point to
 
 *
 * write out a code example of each explanation above
@@ -38,9 +39,14 @@ const student = {
 
 // code example for New Binding
 
-const car = {
-
+const Car = function(model,color,make){
+    
+    this.model = model;
+    this.color = color;
+    this.make = make;
 }
+
+const mustang = new Car('1987','black','Ford')
 
 // Principle 4
 

@@ -15,7 +15,7 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-const GameObject = function(attributes){
+function GameObject(attributes){
   this.createdAt = attributes.createdAt;
   this.name = attributes.name;
   this.dimensions = attributes.dimensions;
@@ -32,7 +32,8 @@ const GameObject = function(attributes){
   * should inherit destroy() from GameObject's prototype     ?????call
 */
 
-const CharacterStats = function(attributes){
+function CharacterStats (attributes){
+  GameObject.call(this, attributes);
   this.healthPoints = attributes.healthPoints;
 }
 CharacterStats.prototype = Object.create(GameObject.prototype);
@@ -51,7 +52,7 @@ CharacterStats.prototype.takeDamage = function(){
   * should inherit takeDamage() from CharacterStats
 */
 
-const Humanoid = function(attributes){
+function Humanoid (attributes){
   CharacterStats.call(this, attributes)
   this.team = attributes.team;
   this.weapons = attributes.weapons;
@@ -122,6 +123,7 @@ Humanoid.prototype.greet = function (){
     ],
     language: 'Elvish',
   });
+
 
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
